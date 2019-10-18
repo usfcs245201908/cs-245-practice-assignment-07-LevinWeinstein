@@ -46,15 +46,23 @@ public class Practice07Test {
 			}
 			
 			if (list.size() != work.length) {
+				System.out.println("Size Fail");
+				System.exit(1);
 				return false;
 			}
 			
 			for (int i = work.length-1; i >= 0; i--) {
-				if (! list.remove(i).equals(work[i]))
+				if (! list.remove(i).equals(work[i])) {
+					System.out.println("Bad Element Error");
+					System.exit(1);
 					return false;
+				}
 			}
 			return true;
 		} catch (Exception e) {
+			System.out.println("Exception Raised Error");
+			e.printStackTrace();
+			System.exit(1);
 			return false;
 		}
 	}
